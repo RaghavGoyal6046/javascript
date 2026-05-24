@@ -6,12 +6,12 @@
 // }
 
 // 2. Example of arrow function
-const greet = (name) => {
+const greetI = (name) => {
     console.log("Hello, " + name + "!");
 }
 
-greet("Alice"); // calling the function with different arguments
-greet("Bob");
+greetI("Alice"); // calling the function with different arguments
+greetI("Bob");
 
 // 3. Arrow function with implicit return
 const add = (a, b) => a + b; //oneliner arrow function with implicit return 
@@ -46,7 +46,7 @@ console.log(greet("Alice")); // this will work because greet is defined before i
 const person = {
     name: "Alice",
     greet: function() {
-        console.log("Hello, " + this.name + "!");
+    console.log("Hello, " + this.name + "!");
     }
 }
 

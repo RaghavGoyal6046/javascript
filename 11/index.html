@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <h1>Document Object Model</h1>
+    
+    <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of a document as a tree of objects, allowing developers to manipulate the content, structure, and style of a webpage dynamically using JavaScript.</p>
+
+    <script>
+        alert("Hey there i am a DOM alert");
+        const val =prompt("Enter your name:", "Your name here");
+        console.log(val);
+        window.console.log("This is a message from the DOM console"); //js use window object to access the console object and its log method to print a message to the console. use by default in js but we can also use it explicitly as shown here.
+
+        document.title = "DOM Example"; //js use document object to access the title property and change the title of the webpage to "DOM Example". use by default in js but we can also use it explicitly as shown here.   
+        console.log(document.title); //js use document object to access the title property and print the current title of the webpage to the console. use by default in js but we can also use it explicitly as shown here.
+        console.log(document.body); //js use document object to access the body property and print the body element of the webpage to the console. use by default in js but we can also use it explicitly as shown here.
+
+        document.write("<p>This paragraph is added using document.write()</p>"); //js use document object to access the write method and add a new paragraph to the webpage. use by default in js but we can also use it explicitly as shown here.
+
+        const name=prompt("Enter your name:"); //js use prompt function to ask the user for their name and store it in a variable called name. use by default in js but we can also use it explicitly as shown here.
+        document.write("<p>Hello, " + name + "!</p>"); //js use document object to access the write method and add a new paragraph to the webpage that greets the use
+    </script>
+</body>
+</html>

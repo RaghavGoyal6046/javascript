@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        .red{
+            color:red;
+        }
+        .underline{
+            text-decoration:underline;
+        }   
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-Query Selector</title>
+</head>
+<body>
+    <div class="red" id="myId">
+        <h1>Hello There is Some h1 text</h1>
+        <p>This is a paragraph.</p>
+        <pre><code>console.log("Hello, World!"); </code></pre>
+    </div>
+    <div class="block">
+        <h1 id="myId">Hello There is Some h1 text</h1>
+        <p>This is a paragraph.</p>
+        <pre><code>console.log("Hello, World!"); </code></pre>
+
+    </div>
+
+    <div>
+        <div>
+            <h3>This is div2</h3>
+        </div>
+    </div>
+
+    <script>
+        const el=document.getElementById("myId"); //js use document object to access the getElementById method and select the element with the id "myId". the selector used here is "myId" which is an id selector.
+        //console.log(el); //js use the console.log method to print the selected element to the console. the output will be the element with the id "myId" if it exists in the DOM, otherwise it will be null.
+
+        el.innerText="Jhon Doe"; //js use the innerText property of the selected element to change its text content to "Jhon Doe". if the element with the id "myId" exists in the DOM, its text content will be changed to "Jhon Doe", otherwise it will throw an error because el will be null.
+        // el.classList.add("red","underline"); //js use the classList property of the selected element to add the class "red" to it. if the element with the id "myId" exists in the DOM, it will have the class "red" added to it, otherwise it will throw an error because el will be null. adding the class "red" will change the color of the text to red because of the CSS rule defined in the style tag.
+        
+        //el.classList.remove("red"); //js use the classList property of the selected element to remove the class "red" from it. if the element with the id "myId" exists in the DOM, it will have the class "red" removed from it, otherwise it will throw an error because el will be null. removing the class "red" will change the color of the text back to its default color because of the CSS rule defined in the style tag.      
+
+        el.style.textDecoration="underline"; //js use the style property of the selected element to change its text decoration to underline. if the element with the id "myId" exists in the DOM, its text decoration will be changed to underline, otherwise it will throw an error because el will be null. changing the text decoration to underline will underline the text of the selected element because of the CSS rule defined in the style tag.
+        el.style.color="tomato"; //js use the style property of the selected element to change its color to red. if the element with the id "myId" exists in the DOM, its color will be changed to red, otherwise it will throw an error because el will be null. changing the color to red will change the color of the text to red because of the CSS rule defined in the style tag.
+
+        el.parentElement.style.backgroundColor="grey"; //js use the parentElement property of the selected element to access its parent element and then use the style property of the parent element to change its background color to black. if the element with the id "myId" exists in the DOM, its parent element's background color will be changed to black, otherwise it will throw an error because el will be null. changing the background color to black will change the background color of the parent element of the selected element to black because of the CSS rule defined in the style tag.
+
+        el.setAttribute("attribute","This is a tooltip"); //js use the setAttribute method of the selected element to set the title attribute to "This is a tooltip". if the element with the id "myId" exists in the DOM, it will have the title attribute set to "This is a tooltip", otherwise it will throw an error because el will be null. setting the title attribute will show a tooltip with the text "This is a tooltip" when the user hovers over the selected element.         
+        //el.remove(); //js use the remove method of the selected element to remove it from the DOM. if the element with the id "myId" exists in the DOM, it will be removed from the DOM, otherwise it will throw an error because el will be null. removing the selected element will remove it from the webpage and it will no longer be visible to the user.
+
+
+
+    </script>
+</body>
+</html>

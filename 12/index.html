@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector in Js</title>
+</head>
+<body>
+    <div class="block">
+        <h1>Hello There is Some h1 text</h1>
+        <p>This is a paragraph.</p>
+        <pre><code>console.log("Hello, World!"); </code></pre>
+    </div>
+    <div class="block">
+        <h1>Hello There is Some h1 text</h1>
+        <p>This is a paragraph.</p>
+        <pre><code>console.log("Hello, World!"); </code></pre>
+
+    </div>
+
+    <div>
+        <div>
+            <h3>This is div2</h3>
+        </div>
+    </div>
+
+    <script>
+        // query Selector is a method in JavaScript that allows you to select elements from the DOM (Document Object Model) using CSS selectors. It returns the first element that matches the specified selector.
+        /*
+        selectors
+        tag name
+        id #
+        class .
+        */
+
+        // const body = document.querySelector("body"); //js use document object to access the querySelector method and select the body element of the webpage. use by default in js but we can also use it explicitly as shown here. the selector used here is "body" which is a tag name selector.
+        // body.innerHTML= '<h1>Hacked by query selector!</h1>'; //js use the innerHTML property of the body element to change its content to a new h1 element with the text "hacked by query selector".
+
+        // // if only want to access not change the content then we can use textContent property instead of innerHTML property as shown below.
+        // const h1 = document.querySelector("h1"); //js use document object to access the querySelector method and select the first h1 element of the webpage. use by default in js but we can also use it explicitly as shown here. the selector used here is "h1"
+        // console.log(body.innerHTML); //js use the innerHTML property of the body element to print its content to the console.
+
+        // const div=document.querySelector("div");
+        // div.innerHTML="<h1>Hacked by query selector again!</h1>"; //js use the innerHTML property of the div element to change its content to a new h1 element with the text "hacked by query selector again!".
+        
+        const div=document.querySelector("div pre code");  //js use document object to access the querySelector method and select the first code element that is a descendant of a pre element which is a descendant of a div element. use by default in js but we can also use it explicitly as shown here. the selector used here is "div pre code" which is a descendant selector.
+        div.innerText="Hacked by query selector again!";
+        // query selector only selects the first element that matches the specified selector. if we want to select all elements that match the specified selector, we can use the querySelectorAll method instead of querySelector method as shown below.
+
+        //queryselectorAll method returns a NodeList of all elements that match the specified selector. we can use forEach method to iterate over the NodeList and change the content of each element as shown below.
+        const divs=document.querySelectorAll("div pre code"); //js use document object to access the querySelectorAll method and select all code elements that are descendants of pre elements which are descendants of div elements. use by default in js but we can also use it explicitly as shown here. the selector used here is "div pre code" which is a descendant selector.
+        divs.forEach((div)=>{
+            div.innerText="Hacked by query selector again!";
+        });
+    </script>
+</body>
+</html>

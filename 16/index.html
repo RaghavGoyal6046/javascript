@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Elements Dynamically</title>
+
+</head>
+<body>
+    <div>
+        <h1>Create Elements Dynamically </h1>
+        <p>This is a paragraph. </p>
+        <pre><code>console.log("Hello, World!"); </code></pre>
+
+    </div>
+    <div id="my-container"></div>
+
+    <button id="create-button">Create Element</button>
+
+    <script>
+        const button=document.getElementById("create-button"); //js use document object to access the getElementById method and select the element with the id "create-button". the selector used here is "create-button" which is an id selector.
+        const container=document.getElementById("my-container"); //js use document object to access the getElementById method and select the element with the id "my-container". the selector used here is "my-container" which is an id selector.  
+
+        button.addEventListener("click",()=>{
+            const el=document.createElement("div"); //js use the createElement method of the document object to create a new div element. the createElement method takes a tag name as an argument and returns a new element of that type. in this case, it creates a new div element and assigns it to the variable el.
+            el.innerText="I am a new element created dynamically!"; //js use the innerText property of the newly created element to set its text content to "I am a new element created dynamically!". this will change the text content of the new div element to the specified string.
+            container.appendChild(el); //js use the appendChild method of the container element to add the newly created element as a child of the container element. this will add the new div element to the webpage inside   
+
+        })
+        let count=1;
+        button.addEventListener("click",()=>{
+            const el=document.createElement("li");//js use the createElement method of the document object to create a new li element. the createElement method takes a tag name as an argument and returns a new element of that type. in this case, it creates a new li element and assigns it to the variable el.    
+            el.innerText=count;
+            container.appendChild(el);
+             count++;
+        });
+    </script>
+
+</body>
+</html>

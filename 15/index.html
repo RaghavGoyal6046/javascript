@@ -6,7 +6,7 @@
     <title>Event Listners</title>
 </head>
 <body>
-    <div class="block">
+    <div class="block" id="name-block">
         <h1>Hello There is Some h1 text</h1>
         <p>This is a paragraph.</p>
         <pre><code>console.log("Hello, World!"); </code></pre>
@@ -24,8 +24,48 @@
         </div>
     </div>
 
+    <!-- <button onclick="console.log('Button clicked!')">Click Me</button> -->
+     <button onclick="handleClick()">Click Me</button>
+    <button id="clickButton">Button2 </button>
+
     <script>
+        //methof 1: using inline event handlers as shown in the first button. when the button is clicked, it will execute the code inside
+        function handleClick(){
+            console.log("Button clicked!");
+            alert("hey i am clicked!");
+        }
+
+        //method 2: using the addEventListener method to attach event listeners to elements.    
+        // const clickButton=document.getElementById("clickButton"); //js use document object to access the getElementById method and select the element with the id "clickButton". the selector used here is "clickButton" which is an id selector.
+        // clickButton.onclick=function(){ //js use the onclick property of the selected element to assign a function that will be executed when the button is clicked. if the element with the id "clickButton" exists in the DOM, it will have the onclick event listener assigned to it, otherwise it will throw an error because el will be null. assigning the onclick event listener will allow the button to respond to click events and execute the assigned function when clicked. in this case, it will log "Button2 clicked!" to the console and show an alert with the message "hey i am button2 clicked!" when the button is clicked.
+        //     console.log("Button2 clicked!");
+        //     alert("hey i am button2 clicked!");
+        // }
+
+        // const el =document.getElementById("clickButton"); //js use document object to access the getElementById method and select the element with the id "clickButton". the selector used here is "clickButton" which is an id selector.
+        // el.addEventListener("click",function(){ //js use the addEventListener method of the selected element to attach a click event listener to it. if the element with the id "clickButton" exists in the DOM, it will have the click event listener attached to it, otherwise it will throw an error because el will be null. attaching the click event listener will allow the button to respond to click events and execute the assigned function when clicked. in this case, it will log "Button2 clicked again!" to the console and show an alert with the message "hey i am button      2 clicked again!" when the button is clicked.
+        //     console.log("Button2 clicked again!");
+        //     alert("hey i am button2 clicked again!");
+        // });
+
+        const nameBlock=document.getElementById("name-block"); //js use document object to access the getElementById method and select the element with the id "name-block". the selector used here is "name-block" which is an id selector.
+        const el=document.getElementById("clickButton"); //js use document object to access the getElementById method and select the element with the id "clickButton". the selector used here is "clickButton" which is an id selector.
         
+        el.addEventListener("click",()=>{
+            if(nameBlock.style.color==="red"){
+                nameBlock.style.color="black";
+            }else{
+                nameBlock.style.color="red";
+            }
+        });
+
+        const allchildren=document.querySelector("body").children;
+        for(let i=0;i<allchildren.length;i++){
+           allchildren.item(i).addEventListener("click",()=>{
+                allchildren.item(i).remove();
+            });
+        }
+
     </script>
 </body>
 </html>

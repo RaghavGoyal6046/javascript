@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector in Js</title>
+</head>
+<body>
+    <div class="block">
+        <h1>Hello There is Some h1 text</h1>
+        <p>This is a paragraph.</p>
+        <pre><code>console.log("Hello, World!"); </code></pre>
+    </div>
+    <div class="block">
+        <h1>Hello There is Some h1 text</h1>
+        <p>This is a paragraph.</p>
+        <pre><code>console.log("Hello, World!"); </code></pre>
+
+    </div>
+
+    <div>
+        <div>
+            <h3>This is div2</h3>
+        </div>
+    </div>
+
+    <script>
+        const els =document.getElementsByClassName("block"); //js use document object to access the getElementsByClassName method and select all elements with the class name "block". the selector used here is "block" which is a class selector. getElementsByClassName method returns an HTMLCollection of all elements that match the specified class name. we can use for loop to iterate over the HTMLCollection and change the content of each element as shown below.
+        //console.log(els); //js use the console.log method to print the selected elements to the console. the output will be an HTMLCollection of all elements with the class name "block" if they exist in the DOM, otherwise it will be an empty HTMLCollection.
+
+        // for(let i=0;i<els.length;i++){ //js use a for loop to iterate over the HTMLCollection of elements with the class name "block". the loop will run from 0 to the length of the HTMLCollection, which is the number of elements with the class name "block" in the DOM. 
+        //    //console.log(els.item(i)); 
+        //    els.item(i).style.backgroundColor="lightblue"; //js use the item method of the HTMLCollection to access each element and then use the style property of each element to change its background color to light blue. if there are elements with the class name "block" in the DOM, their background color will be changed to light blue, otherwise it will do nothing because the HTMLCollection will be empty. changing the background color to light blue will change the background color of all elements with the class name "block       
+        // }
+        for(let i=els.length-1;i>=0;i--){
+            els.item(i).remove();//js use the item method of the HTMLCollection to access each element and then use the remove method of each element to remove it from the DOM. if there are elements with the class name "block" in the DOM, they will be removed from the DOM, otherwise it will do nothing because the HTMLCollection will be empty. removing the elements with the class name "block" will remove them from the webpage and they will no longer be visible to the user. we iterate over the HTMLCollection in reverse order because when we remove an element from the DOM, the length of the HTMLCollection decreases and the index of the remaining elements changes. iterating in reverse order ensures that we do not skip any elements while removing them.
+        }
+        
+        
+
+        
+    </script>
+</body>
+</html>

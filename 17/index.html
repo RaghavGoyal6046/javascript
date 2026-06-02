@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises in JavaScript</title>
+</head>
+<body>
+    <script>
+        let a =10;
+        let b = 20;
+         
+        let result =a+b;
+        
+        // Method 1: using async/await
+        async function getData(){
+            let resultFromServer=await fetch(
+                'https://jsonplaceholder.typicode.com/todos/1');
+    
+            console.log(await resultFromServer.json());
+
+        }
+        getData();
+
+        // method 2: Using fetch and then -not preferred
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
+        
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error))
+        .finally(() => console.log('Fetch operation completed'));
+
+        console.log(result);
+
+         
+    </script>
+</body>
+</html>

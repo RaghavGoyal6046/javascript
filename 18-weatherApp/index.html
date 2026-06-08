@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyline Weather</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Search Controls -->
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" placeholder="Search city..." id="city-input" class="search-input" autocomplete="off">
+                <!-- Search icon svg -->
+                <svg class="search-icon-svg" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+            <button class="btn btn-search" id="getWeatherBtn">Search</button>
+        </div>
+
+        <!-- Welcome/Initial State -->
+        <div class="message-card" id="welcomeCard">
+            <div class="message-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+                    <circle cx="12" cy="12" r="4"></circle>
+                </svg>
+            </div>
+            <h3 class="message-title">Skyline Weather</h3>
+            <p class="message-desc">Enter a city name above to view current weather conditions.</p>
+        </div>
+
+        <!-- Loading State -->
+        <div class="loader-container hidden" id="loader">
+            <div class="spinner"></div>
+            <span class="loader-text">Fetching current conditions...</span>
+        </div>
+
+        <!-- Error State -->
+        <div class="message-card error-card hidden" id="errorCard">
+            <div class="message-icon">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+            </div>
+            <h3 class="message-title" id="errorTitle">Location Not Found</h3>
+            <p class="message-desc" id="errorDesc">We couldn't retrieve weather details for that location. Please check the spelling and try again.</p>
+        </div>
+
+        <!-- Weather Results View -->
+        <div class="weather-result-container hidden" id="weatherResult">
+            <div class="weather-header">
+                <div class="city-title-wrapper">
+                    <h3 class="city-title" id="city-name">Country, Region - City</h3>
+                    <span class="city-subtitle" id="city-time">Local Time</span>
+                </div>
+            </div>
+
+            <div class="weather-main-panel">
+                <div class="weather-icon-wrapper">
+                    <img id="weather-icon" class="weather-icon-img" src="" alt="Weather Icon">
+                </div>
+                <div class="temp-display">
+                    <span id="city-temp">13</span>
+                    <span class="temp-unit">°C</span>
+                </div>
+                <div class="weather-condition" id="weather-desc">Cloudy</div>
+            </div>
+        </div>
+
+        <div class="app-footer">
+            Powered by <a href="https://www.weatherapi.com/" target="_blank" rel="noopener noreferrer">WeatherAPI</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
